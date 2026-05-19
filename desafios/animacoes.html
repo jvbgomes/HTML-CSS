@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacoes CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #1a1a2e;
+            color: white;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #e94560;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #888;
+            margin-bottom: 60px;
+        }
+
+        .secao {
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .secao h2 {
+            font-size: 1.1rem;
+            color: #e94560;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #333;
+            border-top-color: #e94560;
+            border-radius: 50%;
+            animation: girar 1s linear infinite;
+        }
+
+        @keyframes girar {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Pulsar */
+        .pulsar {
+            width: 60px;
+            height: 60px;
+            background: #e94560;
+            border-radius: 50%;
+            animation: pulsar 1.2s ease-in-out infinite;
+        }
+
+        @keyframes pulsar {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.6; }
+        }
+
+        /* Bounce */
+        .bounce {
+            width: 50px;
+            height: 50px;
+            background: #0f3460;
+            border: 3px solid #16213e;
+            border-radius: 8px;
+            animation: bounce 0.8s ease-in-out infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-40px); }
+        }
+
+        /* Slide */
+        .slide-container {
+            width: 100%;
+            height: 60px;
+            background: #16213e;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide-box {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            border-radius: 10px;
+            animation: slide 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes slide {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(100vw - 140px)); }
+        }
+
+        /* Fade */
+        .fade-box {
+            width: 150px;
+            height: 80px;
+            background: linear-gradient(135deg, #e94560, #16213e);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            animation: fadeInOut 2s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 1; }
+        }
+
+        /* Barra de progresso */
+        .progresso-container {
+            width: 100%;
+            background: #16213e;
+            border-radius: 20px;
+            height: 20px;
+            overflow: hidden;
+        }
+
+        .progresso-barra {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #0f3460);
+            border-radius: 20px;
+            animation: progresso 3s ease-in-out infinite;
+        }
+
+        @keyframes progresso {
+            0% { width: 0%; }
+            50% { width: 100%; }
+            100% { width: 0%; }
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animacoes CSS</h1>
+    <p class="subtitulo">Demonstracao de keyframes e transitions</p>
+
+    <div class="secao">
+        <h2>Spinner e Pulsar</h2>
+        <div class="flex-row">
+            <div class="spinner"></div>
+            <div class="pulsar"></div>
+            <div class="bounce"></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>Slide</h2>
+        <div class="slide-container">
+            <div class="slide-box"></div>
+        </div>
+    </div>
+
+    <div class="secao">
+        <h2>Fade</h2>
+        <div class="fade-box">Loading...</div>
+    </div>
+
+    <div class="secao">
+        <h2>Barra de Progresso</h2>
+        <div class="progresso-container">
+            <div class="progresso-barra"></div>
+        </div>
+    </div>
+</body>
+</html>
